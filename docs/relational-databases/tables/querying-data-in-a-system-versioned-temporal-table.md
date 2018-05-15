@@ -21,7 +21,7 @@ monikerRange: "= azuresqldb-current || >= sql-server-2016 || = sqlallproducts-al
 
   When you want to get latest (actual) state of data in a temporal table, you can query completely the same way as you query non-temporal table. If the PERIOD columns are not hidden, their values will appear in a SELECT \* query. If you specified **PERIOD** columns as hidden, their values won’t appear in a SELECT \* query. When the **PERIOD** columns are hidden, reference the **PERIOD** columns specifically in the SELECT clause to return the values for these columns.  
   
- To perform any type of time-based analysis, use the new  **FOR SYSTEM_TIME** clause with four temporal-specific sub-clauses to query data across the current and history tables. For more information on these clauses, see [Temporal Tables](../../relational-databases/tables/temporal-tables.md) and [FROM &#40;Transact-SQL&#41;](../../t-sql/queries/from-transact-sql.md)  
+ To perform any type of time-based analysis, use the new **FOR SYSTEM_TIME** clause with four temporal-specific sub-clauses to query data across the current and history tables. For more information on these clauses, see [Temporal Tables](../../relational-databases/tables/temporal-tables.md) and [FROM &#40;Transact-SQL&#41;](../../t-sql/queries/from-transact-sql.md)  
   
 -   AS OF <date_time>  
   
@@ -36,7 +36,7 @@ monikerRange: "= azuresqldb-current || >= sql-server-2016 || = sqlallproducts-al
  **FOR SYSTEM_TIME** can be specified independently for each table in a query. It can be used inside common table expressions, table-valued functions and stored procedures.  
   
 ## Query for a specific time using the AS OF sub-clause  
- Use the**AS OF** sub-clause when you need to reconstruct state of data as it was at any specific time in the past.  You can reconstruct the data with the precision of datetime2 type that was specified in **PERIOD** column definitions.    
+ Use the **AS OF** sub-clause when you need to reconstruct state of data as it was at any specific time in the past.  You can reconstruct the data with the precision of datetime2 type that was specified in **PERIOD** column definitions.    
 The**AS OF** sub-clause clause can be used with constant literals or with variables, which allows you to dynamically specify time condition. The values provided values are interpreted as UTC time.  
   
  This first example returns the state of the dbo.Department table AS OF a specific date in the past.  
